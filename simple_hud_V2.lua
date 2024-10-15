@@ -196,7 +196,7 @@ if CLIENT then
     })
 end
 
--- Función para ocultar las barras originales del HUD
+
 function PLUGIN:ShouldHideBars()
     return true
 end
