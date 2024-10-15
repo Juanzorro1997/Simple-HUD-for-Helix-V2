@@ -58,8 +58,8 @@ if CLIENT then
         local r, g, b, a = color.r, color.g, color.b, color.a or 255
         surface.SetDrawColor(r, g, b, a)
         surface.DrawRect(x, y, w * percentage, h)
-        surface.SetDrawColor(0, 0, 0, 150)  -- Color negro para el borde
-        surface.DrawOutlinedRect(x, y, w, h)  -- Dibuja el borde
+        surface.SetDrawColor(0, 0, 0, 150)  
+        surface.DrawOutlinedRect(x, y, w, h)  
 
         
         draw.SimpleText(math.Round(percentage * 100) .. "%", "Trebuchet24", x + w / 2, y + h / 2, color_white, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
@@ -111,7 +111,7 @@ if CLIENT then
         local healthColor = ix.option.Get("healthColor", Color(255, 75, 66))
         local armorColor = ix.option.Get("armorColor", Color(255, 132, 187))
         local staminaColor = ix.option.Get("staminaColor", Color(67, 223, 67))
-        local backgroundColor = ix.option.Get("backgroundColor", Color(0, 0, 0, 200))  -- Color de fondo
+        local backgroundColor = ix.option.Get("backgroundColor", Color(0, 0, 0, 200))  
 
         local hp = ply:Health() / ply:GetMaxHealth()
         local armor = ply:Armor() / 100
@@ -119,9 +119,9 @@ if CLIENT then
         local x, y = 15, ScrH() - barH * 4 - 20
 
        
-        local headBgX, headBgY = 15, y - 110  -- Ajustar posición del fondo
-        surface.SetDrawColor(backgroundColor)  -- Color del fondo configurado
-        surface.DrawRect(headBgX, headBgY, headPanelWidth, headPanelHeight)  -- Dibuja el fondo
+        local headBgX, headBgY = 15, y - 110  
+        surface.SetDrawColor(backgroundColor)  
+        surface.DrawRect(headBgX, headBgY, headPanelWidth, headPanelHeight)  
 
         
         if IsValid(elegant_model) then
@@ -130,8 +130,8 @@ if CLIENT then
         end
 
         
-        local barX = headBgX + headPanelWidth + 20  -- Ajustar posición de las barras
-        local barY = headBgY + 10  -- Mover barras un poco más arriba
+        local barX = headBgX + headPanelWidth + 20  
+        local barY = headBgY + 10  
 
         
         DrawBar(barX, barY, barW, barH, healthColor, hp)
